@@ -1,0 +1,14 @@
+version: "2.4"
+services:
+  prometheus:
+    image: "prom/prometheus"
+    container_name: "prometheus"
+    restart: always
+    user: "${DOCKER_USER}"
+    volumes:
+      - prometheus/data:/prometheus
+      - prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    mem_limit: 256m
+    memswap_limit: 0m
+    ports:
+      - "9090:9090"
