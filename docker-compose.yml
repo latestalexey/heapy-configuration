@@ -4,7 +4,7 @@ services:
     image: "prom/prometheus:v2.16.0"
     container_name: "prometheus"
     restart: always
-    user: "${DOCKER_USER}"
+    user: "${DEFAULT_USER}"
     volumes:
       - ./prometheus/data:/prometheus
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
