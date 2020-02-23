@@ -6,8 +6,8 @@ services:
     restart: always
     user: "${DOCKER_USER}"
     volumes:
-      - prometheus/data:/prometheus
-      - prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/data:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     mem_limit: 256m
     memswap_limit: 0m
     ports:
